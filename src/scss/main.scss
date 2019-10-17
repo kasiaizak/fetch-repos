@@ -1,6 +1,7 @@
 @import "_normalize";
 @import "_variables";
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Zilla+Slab:400,400i&display=swap');
+@import "_mixin";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,700|Zilla+Slab:400,400i&display=swap');
 
 html {
   box-sizing: border-box;
@@ -14,5 +15,85 @@ body {
   color: #fff;
   background: $dark-gray;
   font-family: 'Montserrat', sans-serif;
-  // font-family: 'Zilla Slab', serif;
+  font-size: 14px;
+  justify-content: space-between;
+  min-height: 100vh;
+  @include horizontal-center;
+}
+
+.site-header {
+  color: $orange;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.main-content {
+  padding: 1em 0;
+  width: 100%;
+  .main-header {
+    background: linear-gradient(90deg, $orange -21.05%, $violet 121.05%);
+    box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.1);
+    padding: 1em 0;
+    @include horizontal-center;
+    &__description {
+      font-weight: lighter;
+      line-height: 150%;
+      text-align: center;
+      width: 80%;
+      &--form {
+        width: 70%;
+        input, label {
+          color: #CBCFD4;
+          display: block;
+        }
+        input {
+          border-radius: 10px;
+          font-size: 0.8em;
+          margin-left: auto;
+          margin-right: auto;
+          padding: 0.8em;
+          width: 100%;
+        }
+        label {
+          font-size: 0.6em;
+          line-height: 1.5em;
+          text-align: left;
+        }
+      }
+    }
+    &__title {
+      font-family: 'Zilla Slab', serif;
+      font-weight: normal;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.site-footer {
+  background: $medium-gray;
+  box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.1);
+  font-size: 0.7em;
+  margin: 1em 0;
+  width: 100%;
+  @include horizontal-center;
+  &__img, &__links {
+    padding: 1em 0;
+  }
+  &__img {
+    display: none;
+  }
+  &__links a {
+    padding: 0.5em;
+  }
+  &__project-info {
+    text-align: center;
+  }
+  &__project-info a, &__links a i {
+    @include text-gradient;
+  }
+  @media screen and (min-width: 720px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+  }
 }
