@@ -1,0 +1,16 @@
+@mixin horizontal-center {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin text-gradient {
+  color: $orange;
+  -webkit-text-fill-color: transparent;
+  @supports(-webkit-background-clip:text) {
+    background: linear-gradient(to right, $orange, $violet);
+    background-clip: text;
+    box-decoration-break: clone;
+    -webkit-text-fill-color: transparent;
+  }
+}
