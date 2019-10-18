@@ -58,7 +58,6 @@ body {
       &--form {
         width: 70%;
         input, label {
-          color: #CBCFD4;
           display: block;
           width: 100%;
         }
@@ -70,7 +69,11 @@ body {
           margin-right: auto;
           padding: 0.8em;
         }
+        input::placeholder {
+          color: $light-gray;
+        }
         label {
+          color: $light-gray;
           display: none;
           font-size: 0.8em;
           line-height: 1.5em;
