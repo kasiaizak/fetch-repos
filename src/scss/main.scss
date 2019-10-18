@@ -19,12 +19,22 @@ body {
   justify-content: space-between;
   min-height: 100vh;
   @include horizontal-center;
+  a {
+    color: $orange;
+  }
+  @media screen and (min-width: $tablet) {
+    font-size: 16px;
+  }
+  @media screen and (min-width: $laptop) {
+    font-size: 20px;
+  }
 }
 
 .site-header {
   color: $orange;
   font-size: 1.2em;
   font-weight: bold;
+  margin: 1em 0;
   text-transform: uppercase;
 }
 .main-content {
@@ -35,6 +45,11 @@ body {
     box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.1);
     padding: 1em 0;
     @include horizontal-center;
+    &__title {
+      font-family: 'Zilla Slab', serif;
+      font-weight: normal;
+      margin-bottom: 0;
+    }
     &__description {
       font-weight: lighter;
       line-height: 150%;
@@ -45,26 +60,35 @@ body {
         input, label {
           color: #CBCFD4;
           display: block;
+          width: 100%;
         }
         input {
           border-radius: 10px;
+          border-width: 0;
           font-size: 0.8em;
           margin-left: auto;
           margin-right: auto;
           padding: 0.8em;
-          width: 100%;
         }
         label {
-          font-size: 0.6em;
+          display: none;
+          font-size: 0.8em;
           line-height: 1.5em;
           text-align: left;
+          @media screen and (min-width: $tablet) {
+            display: inline-block;
+          }
+        }
+        @media screen and (min-width: $tablet) {
+          width: 50%;
+        }
+        @media screen and (min-width: $laptop) {
+          width: 40%;
         }
       }
     }
-    &__title {
-      font-family: 'Zilla Slab', serif;
-      font-weight: normal;
-      margin-bottom: 0;
+    @media screen and (min-width: $tablet) {
+      padding: 3em 0;
     }
   }
 }
@@ -72,7 +96,7 @@ body {
 .site-footer {
   background: $medium-gray;
   box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.1);
-  font-size: 0.7em;
+  font-size: 0.9em;
   margin: 1em 0;
   width: 100%;
   @include horizontal-center;
@@ -81,19 +105,28 @@ body {
   }
   &__img {
     display: none;
+    @media screen and (min-width: $tablet) {
+      display: initial;
+    }
   }
   &__links a {
+    font-size: 1.5em;
     padding: 0.5em;
+    i {
+      @include text-gradient;
+    }
   }
   &__project-info {
+    line-height: 1.3em;
     text-align: center;
+    @media screen and (min-width: $tablet) {
+      font-size: 0.8em;
+    }
   }
-  &__project-info a, &__links a i {
-    @include text-gradient;
-  }
-  @media screen and (min-width: 720px) {
+  @media screen and (min-width: $tablet) {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 4fr 1fr 4fr;
     justify-items: center;
+    padding: 0.5em 0;
   }
 }
