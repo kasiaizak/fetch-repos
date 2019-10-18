@@ -335,11 +335,20 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column; }
+  body a {
+    color: #F27A54; }
+  @media screen and (min-width: 768px) {
+    body {
+      font-size: 16px; } }
+  @media screen and (min-width: 1024px) {
+    body {
+      font-size: 20px; } }
 
 .site-header {
   color: #F27A54;
   font-size: 1.2em;
   font-weight: bold;
+  margin: 1em 0;
   text-transform: uppercase; }
 
 .main-content {
@@ -362,6 +371,10 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column; }
+    .main-content .main-header__title {
+      font-family: 'Zilla Slab', serif;
+      font-weight: normal;
+      margin-bottom: 0; }
     .main-content .main-header__description {
       font-weight: lighter;
       line-height: 150%;
@@ -371,28 +384,38 @@ body {
         width: 70%; }
         .main-content .main-header__description--form input, .main-content .main-header__description--form label {
           color: #CBCFD4;
-          display: block; }
+          display: block;
+          width: 100%; }
         .main-content .main-header__description--form input {
           border-radius: 10px;
+          border-width: 0;
           font-size: 0.8em;
           margin-left: auto;
           margin-right: auto;
-          padding: 0.8em;
-          width: 100%; }
+          padding: 0.8em; }
         .main-content .main-header__description--form label {
-          font-size: 0.6em;
+          display: none;
+          font-size: 0.8em;
           line-height: 1.5em;
           text-align: left; }
-    .main-content .main-header__title {
-      font-family: 'Zilla Slab', serif;
-      font-weight: normal;
-      margin-bottom: 0; }
+          @media screen and (min-width: 768px) {
+            .main-content .main-header__description--form label {
+              display: inline-block; } }
+        @media screen and (min-width: 768px) {
+          .main-content .main-header__description--form {
+            width: 50%; } }
+        @media screen and (min-width: 1024px) {
+          .main-content .main-header__description--form {
+            width: 40%; } }
+    @media screen and (min-width: 768px) {
+      .main-content .main-header {
+        padding: 3em 0; } }
 
 .site-footer {
   background: #3C444C;
   -webkit-box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.1);
-  font-size: 0.7em;
+  font-size: 0.9em;
   margin: 1em 0;
   width: 100%;
   -webkit-box-align: center;
@@ -409,29 +432,38 @@ body {
     padding: 1em 0; }
   .site-footer__img {
     display: none; }
+    @media screen and (min-width: 768px) {
+      .site-footer__img {
+        display: initial; } }
   .site-footer__links a {
+    font-size: 1.5em;
     padding: 0.5em; }
+    .site-footer__links a i {
+      color: #F27A54;
+      -webkit-text-fill-color: transparent; }
+      @supports (-webkit-background-clip: text) {
+        .site-footer__links a i {
+          background: -webkit-gradient(linear, left top, right top, from(#F27A54), to(#A154F2));
+          background: -o-linear-gradient(left, #F27A54, #A154F2);
+          background: linear-gradient(to right, #F27A54, #A154F2);
+          -webkit-background-clip: text;
+                  background-clip: text;
+          -webkit-box-decoration-break: clone;
+                  box-decoration-break: clone;
+          -webkit-text-fill-color: transparent; } }
   .site-footer__project-info {
+    line-height: 1.3em;
     text-align: center; }
-  .site-footer__project-info a, .site-footer__links a i {
-    color: #F27A54;
-    -webkit-text-fill-color: transparent; }
-    @supports (-webkit-background-clip: text) {
-      .site-footer__project-info a, .site-footer__links a i {
-        background: -webkit-gradient(linear, left top, right top, from(#F27A54), to(#A154F2));
-        background: -o-linear-gradient(left, #F27A54, #A154F2);
-        background: linear-gradient(to right, #F27A54, #A154F2);
-        -webkit-background-clip: text;
-                background-clip: text;
-        -webkit-box-decoration-break: clone;
-                box-decoration-break: clone;
-        -webkit-text-fill-color: transparent; } }
-  @media screen and (min-width: 720px) {
+    @media screen and (min-width: 768px) {
+      .site-footer__project-info {
+        font-size: 0.8em; } }
+  @media screen and (min-width: 768px) {
     .site-footer {
       display: -ms-grid;
       display: grid;
-      -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-      justify-items: center; } }
+      -ms-grid-columns: 4fr 1fr 4fr;
+      grid-template-columns: 4fr 1fr 4fr;
+      justify-items: center;
+      padding: 0.5em 0; } }
 
 /*# sourceMappingURL=main.css.map */
